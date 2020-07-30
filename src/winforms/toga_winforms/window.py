@@ -95,15 +95,16 @@ class Window:
             self.native.Controls.Add(self.toolbar_native)
             # Create the lookup table of menu items,
             # then force the creation of the menus.
-        self.native.Controls.Add(widget.native)
 
         # Set the widget's viewport to be based on the window's content.
         widget.viewport = WinFormsViewport(native=self.native, frame=self)
         widget.frame = self
 
-        # Add all children to the content widget.
-        for child in widget.interface.children:
-            child._impl.container = widget
+        # Setting widget's container or parent
+        widget.container = self
+
+        # Expanding the widget to occupy empty space of window
+        widget.native.Dock = WinForms.DockStyle.Fill
 
     def set_title(self, title):
         self.native.Text = title
