@@ -9,6 +9,7 @@ Widgets
    divider
    imageview
    label
+   multipageview
    multilinetextinput
    numberinput
    passwordinput

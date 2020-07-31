@@ -13,6 +13,7 @@ from .widgets.divider import Divider
 from .widgets.imageview import ImageView
 from .widgets.label import Label
 from .widgets.multilinetextinput import MultilineTextInput
+from .widgets.multipageview import MultiPageView, Page
 from .widgets.numberinput import NumberInput
 from .widgets.optioncontainer import OptionContainer
 from .widgets.passwordinput import PasswordInput
@@ -57,10 +58,12 @@ __all__ = [
     'DatePicker',
     'TimePicker',
     'Label',
+    'MultiPageView',
     'MultilineTextInput',
     'NumberInput',
     'OptionContainer',
     'PasswordInput',
+    'Page',
     'ProgressBar',
     'ScrollContainer',
     'Selection',
