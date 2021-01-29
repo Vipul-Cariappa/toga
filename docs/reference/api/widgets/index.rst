@@ -10,6 +10,7 @@ Widgets
    imageview
    label
    multilinetextinput
+   multipageview
    numberinput
    passwordinput
    progressbar

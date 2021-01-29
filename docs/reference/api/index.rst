@@ -29,6 +29,7 @@ General widgets
  :doc:`ImageView </reference/api/widgets/imageview>`                     Image Viewer
  :doc:`Label </reference/api/widgets/label>`                             Text label
  :doc:`MultilineTextInput </reference/api/widgets/multilinetextinput>`   Multi-line Text Input field
+ :doc:`MultiPageView </reference/api/widgets/multipageview>`             Widget to create pages of widgets
  :doc:`NumberInput </reference/api/widgets/numberinput>`                 Number Input field
  :doc:`PasswordInput </reference/api/widgets/passwordinput>`             A text input that hides it's input
  :doc:`ProgressBar </reference/api/widgets/progressbar>`                 Progress Bar
