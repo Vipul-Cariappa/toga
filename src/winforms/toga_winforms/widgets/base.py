@@ -40,7 +40,7 @@ class Widget:
             self.native.BringToFront()
 
         for child in self.interface.children:
-            child._impl.container = container
+            child._impl.container = self
 
         self.rehint()
 
