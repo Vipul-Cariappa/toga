@@ -31,12 +31,21 @@ class Window:
 
     def __html__(self):
         return """
-            <main id="toga_{id}" class="container" role="main">
+            <main id="toga_{id}" class="container" role="main" style="padding-top:80px">
             {content}
             </main>
         """.format(
             id=self.interface.id,
             content=self.interface.content._impl.__html__()
+        )
+
+    def __js__(self):
+        return """
+        <script type="text/javascript">
+            {content}
+        </script>
+        """.format(
+            content=self.interface.content._impl.__js__()
         )
 
     def set_title(self, title):

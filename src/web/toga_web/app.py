@@ -22,14 +22,14 @@ class App:
         # self.resource_path = os.path.dirname(os.path.dirname(NSBundle.mainBundle.bundlePath))
 
         formal_name = self.interface.formal_name
-        self.interface.commands.add(
-            toga.Command(
-                self.interface.about_command,
-                'About ' + formal_name,
-                group=toga.Group.APP
-            ),
-            toga.Command(None, 'Preferences', group=toga.Group.APP),
-        )
+        # self.interface.commands.add(
+        #     toga.Command(
+        #         self.interface.about_command,
+        #         'About ' + formal_name,
+        #         group=toga.Group.APP
+        #     ),
+        #     toga.Command(None, 'Preferences', group=toga.Group.APP),
+        # )
 
     def main_loop(self):
         # Main loop is a no-op
@@ -78,7 +78,7 @@ class App:
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/toga.css">
+    <!-- <link rel="stylesheet" href="/static/toga.css"> -->
 
     <title>{self.interface.formal_name}</title>
   </head>
@@ -140,8 +140,10 @@ class App:
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous">
         </script>
+{custom_script}
   </body>
 </html>""".format(
             self=self,
             main_window=self.interface.main_window._impl.__html__(),
+            custom_script=self.interface.main_window._impl.__js__(),
         )
