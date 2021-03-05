@@ -17,6 +17,30 @@ class Button(Widget):
         return """
         console.log("Button Widget {id}")
         // JS associated with button goes here
+        
+        const ButtonSocket = new WebSocket(
+            'ws://'
+            + window.location.host
+            + '/ws/button/'
+        );
+
+        ButtonSocket.onmessage = function(e) {{
+            const data = JSON.parse(e.data);
+            console.log(data)
+        }};
+
+        ButtonSocket.onclose = function(e) {{
+            console.error('Chat socket closed unexpectedly');
+        }};
+
+        var button = document.getElementById('toga_{id}')
+
+        button.addEventListener("click", function () {{
+            ButtonSocket.send(JSON.stringify({{
+                action: "clicked",
+                color: button.color
+            }}));
+        }});
         """.format(
             id=self.interface.id,
         )
@@ -34,7 +58,8 @@ class Button(Widget):
         pass
 
     def set_on_press(self, handler):
-        pass
+        print(handler)
+        print(handler(None))
 
     def rehint(self):
         pass

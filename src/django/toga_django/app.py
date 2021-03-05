@@ -5,6 +5,8 @@ from django.http import HttpResponse
 
 from toga import platform
 
+from .consumer import button
+
 
 class App:
     def __init__(self, app_module):
@@ -37,3 +39,8 @@ class App:
     @property
     def urls(self):
         return self.get_urls(), 'toga', 'myapp'
+
+
+websocket_urlpatterns = [
+    re_path(r'ws/button/$', button.ButtonConsumer.as_asgi()),
+]

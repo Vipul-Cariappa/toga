@@ -1,8 +1,10 @@
 from .app import App
+from .app import websocket_urlpatterns
 
 __all__ = [
     '__version__',
     'App',
+    'websocket_urlpatterns',
 ]
 
 # Examples of valid version strings
